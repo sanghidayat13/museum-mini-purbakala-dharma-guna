@@ -1,1 +1,1 @@
-# museumminipurbakaladharmaguna.github.io
+# museum-mini-purbakala-dharma-guna
