@@ -1,0 +1,188 @@
+def generate_html_catalog():
+    html_content = """
+    <!DOCTYPE html>
+    <html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Katalog Fosil Museum Bumiayu</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #f9f9f9;
+            }
+            header {
+                background-color: #2c3e50;
+                color: white;
+                padding: 20px;
+                text-align: center;
+                border-radius: 8px 8px 0 0;
+            }
+            h1 {
+                margin: 0;
+            }
+            .museum-info {
+                background-color: white;
+                padding: 20px;
+                border: 1px solid #ddd;
+                border-top: none;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .catalog-item {
+                background-color: white;
+                padding: 20px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .catalog-item h2 {
+                color: #2c3e50;
+                border-bottom: 2px solid #3498db;
+                padding-bottom: 10px;
+            }
+            .item-image {
+                max-width: 100%;
+                height: auto;
+                border-radius: 4px;
+                margin: 10px 0;
+                border: 1px solid #eee;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 15px;
+            }
+            th, td {
+                padding: 12px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            th {
+                background-color: #f2f2f2;
+                width: 30%;
+            }
+            .note {
+                background-color: #e8f4f8;
+                padding: 15px;
+                border-left: 4px solid #3498db;
+                margin: 20px 0;
+            }
+            footer {
+                text-align: center;
+                margin-top: 40px;
+                color: #7f8c8d;
+                font-size: 0.9em;
+            }
+        </style>
+    </head>
+    <body>
+
+        <header>
+            <h1>Repositori Koleksi Museum Bumiayu</h1>
+            <p>Katalog Digital Spesimen Fosil dan Benda Purbakala</p>
+        </header>
+
+        <div class="museum-info">
+            <h2>Profil Museum</h2>
+            <p>Koleksi ini merupakan hasil pelestarian independen yang dikelola oleh pelestari lokal di wilayah Bumiayu. Repositori ini berfungsi sebagai rumah data digital bagi spesimen fosil yang belum memiliki publikasi atau nomor inventaris formal sebelumnya, guna memfasilitasi pendataan warisan budaya ke dalam ekosistem Wikidata.</p>
+            <ul>
+                <li><strong>Lokasi Pengelola:</strong> Bumiayu, Jawa Tengah, Indonesia</li>
+                <li><strong>Fokus Koleksi:</strong> Paleoantropologi, Evolusi Hominin, dan Fauna Pleistosen</li>
+                <li><strong>Pengelola Data:</strong> Tim Proyek GLAM Bumiayu</li>
+            </ul>
+        </div>
+
+        <div class="note">
+            <strong>Catatan Penggunaan Wikidata:</strong> Setiap spesimen di bawah ini memiliki tautan persisten ke halaman ini yang berfungsi sebagai referensi valid (sumber publikasi) untuk pembuatan <em>Item</em> (butir) baru di Wikidata.
+        </div>
+
+        <!-- CONTOH ITEM KOLEKSI 1 -->
+        <div class="catalog-item">
+            <h2>Fosil Rahang Bawah (Mandibula) - Contoh</h2>
+            
+            <!-- Masukkan tautan foto dari Wikimedia Commons di bagian src="" di bawah ini -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png" alt="Foto Fosil 1" class="item-image">
+            
+            <table>
+                <tr>
+                    <th>Nomor Inventaris Lokal</th>
+                    <td><strong>BMA-FOS-001</strong> <em>(Buat format penomoran sendiri yang konsisten)</em></td>
+                </tr>
+                <tr>
+                    <th>Identifikasi Awal</th>
+                    <td>Bovidae / Famili Sapi-sapian (Membutuhkan verifikasi lanjutan)</td>
+                </tr>
+                <tr>
+                    <th>Lokasi Penemuan</th>
+                    <td>Situs [Nama Lokasi], Bumiayu</td>
+                </tr>
+                <tr>
+                    <th>Kondisi Spesimen</th>
+                    <td>Fragmen, terfosilisasi sebagian</td>
+                </tr>
+                <tr>
+                    <th>Keterangan Tambahan</th>
+                    <td>Telah dilabeli oleh tim peneliti dari BRIN untuk keperluan riset sekunder.</td>
+                </tr>
+                <tr>
+                    <th>Tautan Media Commons</th>
+                    <td><a href="https://commons.wikimedia.org/wiki/File:Contoh.jpg" target="_blank">Lihat Berkas Foto / 3D di Commons</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- CONTOH ITEM KOLEKSI 2 (Tinggal di-copy paste kalau ada fosil baru) -->
+        <div class="catalog-item">
+            <h2>Gigi Seri (Incisor) - Contoh</h2>
+            
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png" alt="Foto Fosil 2" class="item-image">
+            
+            <table>
+                <tr>
+                    <th>Nomor Inventaris Lokal</th>
+                    <td><strong>BMA-FOS-002</strong></td>
+                </tr>
+                <tr>
+                    <th>Identifikasi Awal</th>
+                    <td>[Ketik jenis fosil di sini]</td>
+                </tr>
+                <tr>
+                    <th>Lokasi Penemuan</th>
+                    <td>[Ketik lokasi di sini]</td>
+                </tr>
+                <tr>
+                    <th>Kondisi Spesimen</th>
+                    <td>[Ketik kondisi di sini]</td>
+                </tr>
+                <tr>
+                    <th>Keterangan Tambahan</th>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <th>Tautan Media Commons</th>
+                    <td><a href="https://commons.wikimedia.org/wiki/File:Contoh2.jpg" target="_blank">Lihat Berkas Foto / 3D di Commons</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Tim Proyek GLAM Bumiayu. Dikelola secara manual untuk integrasi Wikidata.</p>
+        </footer>
+
+    </body>
+    </html>
+    """
+    
+    with open('index.html', 'w', encoding='utf-8') as f:
+        f.write(html_content)
+        
+    return "File index.html generated."
+
+print(generate_html_catalog())
