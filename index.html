@@ -170,7 +170,7 @@
         </style>
     </head>
     <body>
-        <div class="first-box" id="dynamicBox">
+        <div class="dynamicBox first-box">
             <header>
                 <h1>Repositori Koleksi Museum Mini Purbakala Dharma Guna</h1>
                 <p>Katalog Digital Spesimen Fosil Fauna Pleistosen</p>
@@ -210,7 +210,7 @@
             </div>
         </div>
 
-        <div class="museum-collection" id="dynamicBox">
+        <div class="dynamicBox museum-collection">
             <header class="museum-collection-header">
                 <b>KOLEKSI MUSEUM</b>
             </header>
@@ -285,31 +285,26 @@
         </footer>
 
         <script>
-            const box = document.getElementById('dynamicBox');
-    
-            box.addEventListener('mousemove', (e) => {
-                // Dapatkan posisi koordinat kotak di layar
-                const rect = box.getBoundingClientRect();
+            const cards = document.querySelectorAll('.dynamicBox');
+
+            cards.forEach(card => {
+              card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
                 
-                // Hitung posisi kursor relatif terhadap tengah kotak
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
+                // Menghitung posisi kursor relatif terhadap tengah elemen
+                const xPos = e.clientX - rect.left - rect.width / 2;
+                const yPos = e.clientY - rect.top - rect.height / 2;
                 
-                // Tentukan titik tengah kotak
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                // Hitung jarak offset bayangan (berlawanan arah kursor agar terlihat seperti sumber cahaya)
-                const shadowX = (centerX - x) / 5;
-                const shadowY = (centerY - y) / 5;
-                
-                // Terapkan nilai box-shadow baru
-                box.style.boxShadow = `${shadowX}px ${shadowY}px 25px rgba(0, 0, 0, 0.2)`;
-            });
-    
-            // Kembalikan bayangan ke posisi normal saat kursor keluar dari kotak
-            box.addEventListener('mouseleave', () => {
-                box.style.boxShadow = '0px 0px 0px rgba(0, 0, 0, 0)';
+                // Membalikkan arah atau memperkecil skala pergerakan bayangan (dibagi 3)
+                card.style.setProperty('--x', `${xPos / 3}px`);
+                card.style.setProperty('--y', `${yPos / 3}px`);
+              });
+              
+              // Mengembalikan bayangan ke tengah saat kursor keluar dari div
+              card.addEventListener('mouseleave', () => {
+                card.style.setProperty('--x', '0px');
+                card.style.setProperty('--y', '0px');
+              });
             });
         </script>
         
