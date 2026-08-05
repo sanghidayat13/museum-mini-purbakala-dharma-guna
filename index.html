@@ -13,11 +13,14 @@
             }
             @keyframes temporaryHighlight {
                 0% {
-                    background-color: #fff3cd; /* Warna kuning muda saat awal diklik */
+                    background-color: #fff3cd;
                 }
                 100% {
-                    background-color: transparent; /* Memudar kembali ke normal */
+                    background-color: transparent;
                 }
+            }
+            .highlight-temp {
+                animation: temporaryHighlight 2.5s ease-out forwards;
             }
             #footnotes ol li:target {
                 background-color: #fff3cd;
