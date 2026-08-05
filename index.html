@@ -170,7 +170,7 @@
         </style>
     </head>
     <body>
-        <div class="first-box" id="firstdynamicBox">
+        <div class="first-box" id="dynamicBox">
             <header>
                 <h1>Repositori Koleksi Museum Mini Purbakala Dharma Guna</h1>
                 <p>Katalog Digital Spesimen Fosil Fauna Pleistosen</p>
@@ -210,7 +210,7 @@
             </div>
         </div>
 
-        <div class="museum-collection" id="seconddynamicBox">
+        <div class="museum-collection">
             <header class="museum-collection-header">
                 <b>KOLEKSI MUSEUM</b>
             </header>
@@ -285,34 +285,7 @@
         </footer>
 
         <script>
-            const box = document.getElementById('firstdynamicBox');
-    
-            box.addEventListener('mousemove', (e) => {
-                // Dapatkan posisi koordinat kotak di layar
-                const rect = box.getBoundingClientRect();
-                
-                // Hitung posisi kursor relatif terhadap tengah kotak
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                // Tentukan titik tengah kotak
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                // Hitung jarak offset bayangan (berlawanan arah kursor agar terlihat seperti sumber cahaya)
-                const shadowX = (centerX - x) / 5;
-                const shadowY = (centerY - y) / 5;
-                
-                // Terapkan nilai box-shadow baru
-                box.style.boxShadow = `${shadowX}px ${shadowY}px 25px rgba(0, 0, 0, 0.2)`;
-            });
-    
-            // Kembalikan bayangan ke posisi normal saat kursor keluar dari kotak
-            box.addEventListener('mouseleave', () => {
-                box.style.boxShadow = '0px 0px 0px rgba(0, 0, 0, 0)';
-            });
-
-            const box = document.getElementById('seconddynamicBox');
+            const box = document.getElementById('dynamicBox');
     
             box.addEventListener('mousemove', (e) => {
                 // Dapatkan posisi koordinat kotak di layar
