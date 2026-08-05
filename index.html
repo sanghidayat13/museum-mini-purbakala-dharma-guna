@@ -28,12 +28,21 @@
             h1 {
                 margin: 0;
             }
-            .museum-info, .museum-collection {
+            .museum-info {
                 background-color: white;
-                
                 border: 1px solid #ddd;
-                border-top: none;
+                border-top: none; /* Tanpa border atas karena menempel di bawah header #2c3e50 */
                 text-align: justify;
+                border-radius: 0 0 8px 8px;
+                padding: 30px;
+            }
+            
+            .museum-collection {
+                background-color: white;
+                border: 1px solid #ddd; /* Berikan border penuh di semua sisi */
+                text-align: justify;
+                padding: 0 30px 30px 30px;
+                border-radius: 8px;
             }
             .museum-collection {
                 padding: 0 30px 30px 30px;
@@ -166,6 +175,10 @@
                 background-color: #fff;
                 color: #000;
                 font-size: 25px;
+            }
+            .dynamicBox {
+                transition: box-shadow 0.15s ease-out;
+                box-shadow: var(--x, 0px) var(--y, 0px) 20px rgba(0, 0, 0, 0.15);
             }
         </style>
     </head>
