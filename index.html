@@ -177,8 +177,13 @@
                 font-size: 25px;
             }
             .dynamicBox {
+                position: relative;
+                z-index: 2;
                 transition: box-shadow 0.15s ease-out;
                 box-shadow: var(--x, 0px) var(--y, 0px) 20px rgba(0, 0, 0, 0.15);
+            }
+            .dynamicBox:hover {
+                z-index: 1; 
             }
         </style>
     </head>
