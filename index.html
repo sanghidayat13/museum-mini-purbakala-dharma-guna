@@ -304,26 +304,23 @@
 
         <script>
             const cards = document.querySelectorAll('.dynamicBox');
-
+        
             cards.forEach(card => {
               card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
-                
-                // Menghitung posisi kursor relatif terhadap tengah elemen
+
                 const xPos = e.clientX - rect.left - rect.width / 2;
                 const yPos = e.clientY - rect.top - rect.height / 2;
-                
-                // Membalikkan arah atau memperkecil skala pergerakan bayangan (dibagi 3)
-                card.style.setProperty('--x', `${xPos / 3}px`);
-                card.style.setProperty('--y', `${yPos / 3}px`);
-              });
-              
-              // Mengembalikan bayangan ke tengah saat kursor keluar dari div
-              card.addEventListener('mouseleave', () => {
+
+                card.style.setProperty('--x', `${-xPos / 4}px`);
+                card.style.setProperty('--y', `${-yPos / 4}px`);
+            });
+
+            card.addEventListener('mouseleave', () => {
                 card.style.setProperty('--x', '0px');
                 card.style.setProperty('--y', '0px');
               });
-            });
+            });    
         </script>
         
     </body>
