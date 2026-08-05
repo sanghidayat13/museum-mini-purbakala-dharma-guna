@@ -11,11 +11,20 @@
             #fn1, #fn2, #fn3, #ref1, #ref2, #ref3 {
                 scroll-margin-top: 50px;
             }
+            @keyframes temporaryHighlight {
+                0% {
+                    background-color: #fff3cd; /* Warna kuning muda saat awal diklik */
+                }
+                100% {
+                    background-color: transparent; /* Memudar kembali ke normal */
+                }
+            }
             #footnotes ol li:target {
-                background-color: #fff3cd; /* Warna kuning muda pastel */
+                background-color: #fff3cd;
                 transition: background-color 0.5s ease;
                 border-radius: 4px;
                 padding: 4px 8px;
+                animation: temporaryHighlight 4s ease-out forwards;
             }
             body {
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
